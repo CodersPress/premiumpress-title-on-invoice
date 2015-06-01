@@ -26,13 +26,24 @@ function toi_plugin_updater() {
 			'sslverify' => true,
 			'access_token' => '8568ed5170d97907e57713f8e03ae0bfdf479abf',
 		);
-		new WP_AL_UPDATER( $config );
+		new WP_TOI_UPDATER( $config );
 	}
 }
 
-function title_on_invoice() {
+function title_on_invoice() {	global $CORE;?>
+<script>
+var package_name = jQuery("input[name=item_name]").val();
+jQuery(".btn-danger:contains(<?php echo $CORE->_e(array('single','11')); ?>)").on("click", function (e) {
+    var listing_title = jQuery(".wlt_shortcode_TITLE-NOLINK").text();
+    var new_item_name = listing_title + ' - ' + package_name;
+    jQuery("input[name=item_name]").val(new_item_name);
+    window.onbeforeunload = function () {
+        jQuery("input[name=item_name]").val(package_name);
+    };
+});
+</script>
+<?php }
 
-}
 add_action('wp_footer', 'title_on_invoice');
 
 ?>
