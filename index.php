@@ -3,7 +3,7 @@
 Plugin Name: Title On Invoice
 Plugin URI: http://coderspress.com/
 Description: Adds Listing Titles to Invoices and payments
-Version: 2015.0603
+Version: 2015.0604
 Updated: 4th June 2015
 Author: sMarty 
 Author URI: http://coderspress.com
