@@ -97,7 +97,7 @@ var package_name = jQuery("input[name=item_name]").val();
 var listing_title = jQuery(".wlt_shortcode_TITLE").first().text();
 if (!listing_title) { var listing_title = jQuery(".wlt_shortcode_TITLE-NOLINK").first().text(); }
 jQuery(".btn-danger:contains(<?php echo $CORE->_e(array('single','11')); ?>)").one('click', function () {
-    var new_item_name = package_name + ' - ' + listing_title.substr(0,<?php echo get_option("title_on_invoice_text_length");?>) + '...';;
+    var new_item_name = package_name + ' - ' + listing_title.substr(0,<?php echo get_option("title_on_invoice_text_length");?>) + '...';
     jQuery("input[name=item_name]").val(new_item_name);
     window.onbeforeunload = function () {
         jQuery("input[name=item_name]").val(package_name);
