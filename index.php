@@ -3,8 +3,8 @@
 Plugin Name: Title On Invoice
 Plugin URI: http://coderspress.com/
 Description: Adds Listing Titles to Invoices and payments
-Version: 2015.0603
-Updated: 3rd June 2015
+Version: 2015.0604
+Updated: 4th June 2015
 Author: sMarty 
 Author URI: http://coderspress.com
 WP_Requires: 3.8.1
@@ -31,7 +31,7 @@ function toi_plugin_updater() {
 }
 
 function title_on_invoice_menu() {
-	add_menu_page('Title On Invoice', 'Title On Invoice', 'administrator', __FILE__, 'title_on_invoice_settings_page',plugins_url('/images/icon-arrow.gif', __FILE__));
+	add_menu_page('Title On Invoice', 'Title On Invoice', 'administrator', __FILE__, 'title_on_invoice_settings_page',plugins_url('/images/text_letter_t.png', __FILE__));
 	add_action( 'admin_init', 'title_on_invoice_settings' );
 }
 add_action('admin_menu', 'title_on_invoice_menu');
