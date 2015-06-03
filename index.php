@@ -3,8 +3,8 @@
 Plugin Name: Title On Invoice
 Plugin URI: http://coderspress.com/
 Description: Adds Listing Titles to Invoices and payments
-Version: 2015.0601
-Updated: 1st June 2015
+Version: 2015.0603
+Updated: 3rd June 2015
 Author: sMarty 
 Author URI: http://coderspress.com
 WP_Requires: 3.8.1
@@ -33,9 +33,9 @@ function toi_plugin_updater() {
 function title_on_invoice() {	global $CORE;?>
 <script>
 var package_name = jQuery("input[name=item_name]").val();
+var listing_title = jQuery(".wlt_shortcode_TITLE").text();
 jQuery(".btn-danger:contains(<?php echo $CORE->_e(array('single','11')); ?>)").on("click", function (e) {
-    var listing_title = jQuery(".wlt_shortcode_TITLE-NOLINK").text();
-    var new_item_name = listing_title + ' - ' + package_name;
+    var new_item_name = package_name + ' - ' + listing_title;
     jQuery("input[name=item_name]").val(new_item_name);
     window.onbeforeunload = function () {
         jQuery("input[name=item_name]").val(package_name);
